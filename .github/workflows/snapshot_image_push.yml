@@ -2,7 +2,7 @@ name: Build/Push Management Center latest image
 
 on:
   push:
-    branches: 3.12.z-snapshot
+    branches: master-alpha
 
 jobs:
   build:
@@ -24,5 +24,5 @@ jobs:
       - name: Build/Push Management Center image
         run: |
           docker buildx build --push \
-            --tag hazelcast/management-center:3.12.10-SNAPSHOT-CLOUD \
+            --tag hazelcast/management-center:4.1-ALPHA-2 \
             --platform=linux/arm64,linux/amd64,linux/ppc64le,linux/s390x .
